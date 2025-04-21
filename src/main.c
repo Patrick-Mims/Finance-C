@@ -2,7 +2,7 @@
 
 int main()
 {
-    puts("Finance");
+    puts("Finance 2.0 on the Dev branch");
 
     return 0;
 }
