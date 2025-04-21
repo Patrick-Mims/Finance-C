@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    puts("Hello Girl White");
+    puts("Finance");
+
     return 0;
 }
