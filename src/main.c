@@ -2,6 +2,6 @@
 
 int main()
 {
-    puts("Hello Girl");
+    puts("Hello Girl White");
     return 0;
 }
