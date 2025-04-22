@@ -1,0 +1,5 @@
+# ninja log v5
+0	90	1745196895833593106	CMakeFiles/main.dir/src/main.c.o	607896f196e3fb0b
+90	299	1745196896037588661	main	50dee3dbac7e64fa
+19	2874	1745289818901844378	CMakeFiles/main.dir/src/main.c.o	607896f196e3fb0b
+1	2313	1745295081129160073	CMakeFiles/main.dir/src/main.c.o	607896f196e3fb0b

@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
+  "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/main.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/main.c",
+  "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/main.c",
+  "output": "CMakeFiles/main.dir/src/main.c.o"
+},
+{
+  "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
+  "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/http.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/http.c",
+  "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/http.c",
+  "output": "CMakeFiles/main.dir/src/http.c.o"
+}
+]
