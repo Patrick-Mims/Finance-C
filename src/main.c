@@ -1,8 +1,10 @@
 #include "finance.h"
+#include "finsftp.h"
+#include "finssh.h"
 
 int main()
 {
-    void *(*lt)() = latest_trade; // 
+    void *(*lt)() = latest_trade; //
 
     puts("Finance 2.0 on the Dev branch 2");
 
