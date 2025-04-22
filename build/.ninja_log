@@ -1,5 +1,7 @@
 # ninja log v5
-0	90	1745196895833593106	CMakeFiles/main.dir/src/main.c.o	607896f196e3fb0b
+0	114	1745296241786449192	CMakeFiles/main.dir/src/main.c.o	607896f196e3fb0b
 90	299	1745196896037588661	main	50dee3dbac7e64fa
-19	2874	1745289818901844378	CMakeFiles/main.dir/src/main.c.o	607896f196e3fb0b
-1	2313	1745295081129160073	CMakeFiles/main.dir/src/main.c.o	607896f196e3fb0b
+1	120	1745296590492006915	CMakeFiles/main.dir/src/http.c.o	33ac66d3fac8f136
+3	565	1745296326958627867	CMakeFiles/main.dir/src/memory.c.o	f930a1486c7e1ec1
+0	296	1745296655722792874	CMakeFiles/main.dir/src/thread.c.o	be014d9fbd3daea2
+296	606	1745296656038786560	main	11c639a5a9924677

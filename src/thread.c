@@ -9,5 +9,6 @@ void thread_factory(pthread_t *thread, const void *(*fn)(void *))
         fprintf(stderr, "Error: pthread_create()");
 
     pthread_join(thread, &result);
-    pthread_exit();
+
+    pthread_exit(thread);
 }

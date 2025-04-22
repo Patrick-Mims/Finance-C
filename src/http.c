@@ -1,18 +1,54 @@
 #include "finance.h"
 
+// request url
+static char *g_url() // return the api that we're parsing
+{
+    char *url = NULL;
+
+    if ((url = malloc(50 * sizeof(char))) == NULL)
+        exit(EXIT_FAILURE);
+
+    strcpy(url, "https://data.alpaca.markets");
+    strcat(url, "/v2");
+    strcat(url, "/stocks");
+    strcat(url, "/f");
+    strcat(url, "/trades");
+    strcat(url, "/latest");
+
+    return url;
+}
+
+// write the response to a file
+static size_t write_callback(char *(*dt)(), size_t size, size_t nmemb, void *stream)
+{
+    struct IO *io = (struct IO *)stream;
+
+    io->stream = fopen(io->json_file, "wc");
+
+    if (!io->stream)
+        exit(EXIT_FAILURE);
+
+    puts("write_callback successful!");
+
+    return fwrite(dt, size, nmemb, io->stream);
+}
+
+// function pointer
+static size_t (*wc)(char *, size_t, size_t, void *) = write_callback;
+
 void *latest_trade()
 {
-    struct IO io = { 
+    struct IO io = {
         "trade.json",
         NULL};
 
     struct LIBCURL *libcurl = NULL; // < access libcurl library 
     struct curl_slist *headers = NULL; // < needed for headers
 
-    libcurl = (struct LIBCURL *)g_memory(); // allocate memory directly.
+    libcurl = (struct LIBCURL *)create_node(); // allocate memory directly.
     libcurl->curl = curl_easy_init();
 
-    curl_easy_setopt(libcurl->curl, CURLOPT_URL, gu());
+    curl_easy_setopt(libcurl->curl, CURLOPT_URL, g_url());
     curl_easy_setopt(libcurl->curl, CURLOPT_CUSTOMREQUEST, "GET");
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEFUNCTION, wc);
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEDATA, &io);

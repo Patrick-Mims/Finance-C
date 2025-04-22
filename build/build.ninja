@@ -49,6 +49,13 @@ cmake_ninja_workdir = /home/patrick/Development/C/GitProjects/Finance-C/build/
 
 build cmake_object_order_depends_target_main: phony || .
 
+build CMakeFiles/main.dir/src/http.c.o: C_COMPILER__main_unscanned_Debug /home/patrick/Development/C/GitProjects/Finance-C/src/http.c || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/src/http.c.o.d
+  FLAGS = -g   -w
+  INCLUDES = -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+
 build CMakeFiles/main.dir/src/main.c.o: C_COMPILER__main_unscanned_Debug /home/patrick/Development/C/GitProjects/Finance-C/src/main.c || cmake_object_order_depends_target_main
   DEP_FILE = CMakeFiles/main.dir/src/main.c.o.d
   FLAGS = -g   -w
@@ -56,8 +63,15 @@ build CMakeFiles/main.dir/src/main.c.o: C_COMPILER__main_unscanned_Debug /home/p
   OBJECT_DIR = CMakeFiles/main.dir
   OBJECT_FILE_DIR = CMakeFiles/main.dir/src
 
-build CMakeFiles/main.dir/src/http.c.o: C_COMPILER__main_unscanned_Debug /home/patrick/Development/C/GitProjects/Finance-C/src/http.c || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/src/http.c.o.d
+build CMakeFiles/main.dir/src/memory.c.o: C_COMPILER__main_unscanned_Debug /home/patrick/Development/C/GitProjects/Finance-C/src/memory.c || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/src/memory.c.o.d
+  FLAGS = -g   -w
+  INCLUDES = -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+
+build CMakeFiles/main.dir/src/thread.c.o: C_COMPILER__main_unscanned_Debug /home/patrick/Development/C/GitProjects/Finance-C/src/thread.c || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/src/thread.c.o.d
   FLAGS = -g   -w
   INCLUDES = -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c
   OBJECT_DIR = CMakeFiles/main.dir
@@ -71,7 +85,7 @@ build CMakeFiles/main.dir/src/http.c.o: C_COMPILER__main_unscanned_Debug /home/p
 #############################################
 # Link the executable main
 
-build main: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/src/main.c.o CMakeFiles/main.dir/src/http.c.o | /usr/local/lib/libjson-c.so.5.2.0
+build main: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/src/http.c.o CMakeFiles/main.dir/src/main.c.o CMakeFiles/main.dir/src/memory.c.o CMakeFiles/main.dir/src/thread.c.o | /usr/local/lib/libjson-c.so.5.2.0
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  -lcurl  -ljson-c  -lpthread  /usr/local/lib/libjson-c.so.5.2.0  -lmysqlclient  -lm
   OBJECT_DIR = CMakeFiles/main.dir
