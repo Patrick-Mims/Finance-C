@@ -16,6 +16,7 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 add_executable(${PROJECT_NAME}
     ${SRC}/main.c
+    ${SRC}/http.c
 #    ${SRC}/database.c
 #    ${SRC}/list.c
 #    ${SRC}/parser.c
