@@ -22,7 +22,7 @@ struct LIBCURL
     CURLcode *code;
 };
 
-void *g_trade();
-void insert_node();
+void *g_trade(); // get trade()
+void insert_node(); // insert into linked list
 
 #endif
