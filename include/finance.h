@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 struct IO
 {
@@ -16,12 +17,12 @@ struct IO
 struct LIBCURL
 {
     CURL *curl;
-    CURLM *m;
+    CURLM *curlm;
     CURLMSG *msg;
     CURLcode *code;
 };
 
-struct NODE
+typedef struct NODE
 {
     char *symbol;
     char *trade;
@@ -34,8 +35,9 @@ struct NODE
     char *z;
 
     struct NODE *next;
-};
+} node_t;
 
-void *latest_trade();
+void *g_trade();
+void insert_node();
 
 #endif

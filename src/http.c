@@ -1,6 +1,7 @@
 #include "finance.h"
 
 // request url
+//
 static char *g_url() // return the api that we're parsing
 {
     char *url = NULL;
@@ -19,7 +20,11 @@ static char *g_url() // return the api that we're parsing
 }
 
 // write the response to a file
-static size_t write_callback(char *(*dt)(), size_t size, size_t nmemb, void *stream)
+//
+static size_t write_callback(char *(*dt)(),
+                             size_t size,
+                             size_t nmemb,
+                             void *stream)
 {
     struct IO *io = (struct IO *)stream;
 
@@ -33,10 +38,12 @@ static size_t write_callback(char *(*dt)(), size_t size, size_t nmemb, void *str
     return fwrite(dt, size, nmemb, io->stream);
 }
 
-// function pointer
+// Function Pointer Definitions
+//
+static char *(*g_u)() = g_url;
 static size_t (*wc)(char *, size_t, size_t, void *) = write_callback;
 
-void *latest_trade()
+void *g_trade()
 {
     struct IO io = {
         "trade.json",
@@ -48,7 +55,7 @@ void *latest_trade()
     libcurl = (struct LIBCURL *)create_node(); // allocate memory directly.
     libcurl->curl = curl_easy_init();
 
-    curl_easy_setopt(libcurl->curl, CURLOPT_URL, g_url());
+    curl_easy_setopt(libcurl->curl, CURLOPT_URL, g_u());
     curl_easy_setopt(libcurl->curl, CURLOPT_CUSTOMREQUEST, "GET");
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEFUNCTION, wc);
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEDATA, &io);

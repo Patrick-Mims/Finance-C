@@ -4,7 +4,6 @@ project(main)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 set(SRC "src")
-set(THREADS "threads")
 
 # disable warnings
 add_definitions(-w)
@@ -16,9 +15,11 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 add_executable(${PROJECT_NAME}
     ${SRC}/http.c
+    ${SRC}/list.c
     ${SRC}/main.c
     ${SRC}/memory.c
     ${SRC}/thread.c
+    ${SRC}/finsftp.c
 #    ${SRC}/list.c
 #    ${SRC}/parser.c
 #    ${SRC}/stack.c
@@ -29,6 +30,7 @@ target_link_libraries(${PROJECT_NAME}
     -lcurl
     -ljson-c
     -lpthread
+    -lssh2
     json-c::json-c
     mysqlclient
 )
