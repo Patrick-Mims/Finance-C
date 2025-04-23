@@ -6,11 +6,11 @@ int main()
 {
     puts("Finance 2.0 on the Dev branch 2");
 
-    void *(*g_t)() = g_trade;
+    void *(*gt)() = g_trade;
 
     pthread_t th_trade;
 
-    thread_factory(&th_trade, g_t);
+    thread_factory(&th_trade, gt);
 
     return 0;
 }

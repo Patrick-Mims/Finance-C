@@ -20,10 +20,8 @@ add_executable(${PROJECT_NAME}
     ${SRC}/memory.c
     ${SRC}/thread.c
     ${SRC}/finsftp.c
-#    ${SRC}/list.c
 #    ${SRC}/parser.c
 #    ${SRC}/stack.c
-#    ${SRC}/thread.c
 )
 
 target_link_libraries(${PROJECT_NAME}
