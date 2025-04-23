@@ -1,10 +1,15 @@
 #ifndef FINSFTP_H
 #define FINSFTP_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/socket.h>
 #include "finssh.h"
 #include "libssh2_sftp.h"
 

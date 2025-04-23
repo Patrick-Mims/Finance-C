@@ -17,25 +17,6 @@ libssh2_socket_t sock;
 
 LIBSSH2_SESSION *session;
 
-/*
-#define const char *password = "123456789";
-#define const char *privateKey = ".ssh/id_rsa";
-#define const char *publicKey = ".ssh/id_rsa.pub";
-#define const char *username = "patrick";
-#define const char *path= "/tmp/test";
-
-struct LOGIN
-{
-    char *privkey;
-    char *pword;
-    char *path;
-    char *key;
-    char *user;
-};
-
-typedef struct LOGIN *login_t;
-*/
-
 typedef struct
 {
     char *key;
@@ -44,7 +25,5 @@ typedef struct
     char *pword;
     char *user;
 } login_t;
-
-//LOGIN login = {"", ...};
 
 #endif

@@ -22,21 +22,6 @@ struct LIBCURL
     CURLcode *code;
 };
 
-typedef struct NODE
-{
-    char *symbol;
-    char *trade;
-    char *c;
-    char *i;
-    char *p;
-    char *s;
-    char *t;
-    char *x;
-    char *z;
-
-    struct NODE *next;
-} node_t;
-
 void *g_trade();
 void insert_node();
 

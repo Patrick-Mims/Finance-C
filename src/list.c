@@ -4,7 +4,8 @@ void *node_factory()
 {
     void *node = NULL;
 
-    if((node = malloc(sizeof(void *)))== NULL) exit(EXIT_FAILURE);
+    if ((node = malloc(sizeof(void *))) == NULL)
+        exit(EXIT_FAILURE);
 
     return node;
 }
