@@ -20,7 +20,7 @@ add_executable(${PROJECT_NAME}
     ${SRC}/memory.c
     ${SRC}/thread.c
     ${SRC}/finsftp.c
-    ${SRC}/database.c
+    ${SRC}/db.c
 #    ${SRC}/parser.c
 #    ${SRC}/stack.c
 )

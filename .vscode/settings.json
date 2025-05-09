@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "finance.h": "c"
-    }
+        "finance.h": "c",
+        "libssh2_setup.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
