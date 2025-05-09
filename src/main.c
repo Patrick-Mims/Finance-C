@@ -1,4 +1,4 @@
-#include "database.h"
+#include "db.h"
 #include "finance.h"
 #include "finsftp.h"
 #include "finssh.h"
@@ -29,11 +29,16 @@ int main()
     puts("Finance 2.0 on the Dev branch 2");
     mysql_version();
 
+    // function pointers
+    // void *(alias)() = function;
+
     void *(*gt)() = g_trade;
     void (*db)() = db;
 
+    // set the thread object name.
     pthread_t th_db, th_trade;
 
+    // define threads, using a thread factory
     thread_factory(&th_trade, gt);
     // thread_factory(&th_db, db);
 

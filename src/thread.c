@@ -1,5 +1,8 @@
 #include "finance.h"
 
+/**
+ * Utility function to create a threads. 
+ */
 void thread_factory(pthread_t *thread, const void *(*fn)(void *)) 
 {
     void *result;

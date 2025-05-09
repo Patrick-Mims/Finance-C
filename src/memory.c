@@ -1,6 +1,5 @@
 #include "finance.h"
 
-// memory allocating functions
 void *create_node()
 {
     void *node = NULL;
@@ -9,9 +8,10 @@ void *create_node()
         exit(EXIT_FAILURE);
 
     return node;
-};
+}
 
-void insert(struct NODE **linkedlist,
+/*
+void insert_node(struct NODE **linkedlist,
             char *symbol,
             char *trade,
             char *c,
@@ -37,3 +37,4 @@ void insert(struct NODE **linkedlist,
     node->next = *linkedlist;
     *linkedlist = node;
 }
+*/
