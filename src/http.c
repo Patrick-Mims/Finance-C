@@ -69,9 +69,6 @@ void *g_trade()
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEFUNCTION, wc);
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEDATA, &io);
 
-    headers = curl_slist_append(headers, "accept: application/json");
-    headers = curl_slist_append(headers, "APCA-API-KEY-ID: PKS5C8MOUB65EA7ACRMC");
-    headers = curl_slist_append(headers, "APCA-API-SECRET-KEY: 8l0D1LbcPmgbltlmkjxhY2ltdeeRPFfk33jtzq2R");
 
     curl_easy_setopt(libcurl->curl, CURLOPT_HTTPHEADER, headers);
 
