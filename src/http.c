@@ -1,16 +1,16 @@
 #include "finance.h"
 
 /*
- *   ______        _   _       _     _____ _               _      _____      
- *   |  _  \      | \ | |     | |   /  __ \ |             | |    |_   _|     
- *   | | | |___   |  \| | ___ | |_  | /  \/ |__   ___  ___| | __   | | _ __  
- *   | | | / _ \  | . ` |/ _ \| __| | |   | '_ \ / _ \/ __| |/ /   | || '_ \ 
+ *   ______        _   _       _     _____ _               _      _____
+ *   |  _  \      | \ | |     | |   /  __ \ |             | |    |_   _|
+ *   | | | |___   |  \| | ___ | |_  | /  \/ |__   ___  ___| | __   | | _ __
+ *   | | | / _ \  | . ` |/ _ \| __| | |   | '_ \ / _ \/ __| |/ /   | || '_ \
  *   | |/ / (_) | | |\  | (_) | |_  | \__/\ | | |  __/ (__|   <   _| || | | |
  *   |___/ \___/  \_| \_/\___/ \__|  \____/_| |_|\___|\___|_|\_\  \___/_| |_|
  * */
 
 // Request Url
-static char *g_url() // return the api that we're parsing
+static char *api_str() // return the api that we're parsing
 {
     char *url = NULL;
 
@@ -28,7 +28,7 @@ static char *g_url() // return the api that we're parsing
 }
 
 // Function Pointer Definition
-static char *(*gu)() = g_url;
+static char *(*api)() = api_str;
 
 // Write the response to a file
 static size_t write_callback(char *(*dt)(),
@@ -51,12 +51,9 @@ static size_t write_callback(char *(*dt)(),
 // Function Pointer Definition
 static size_t (*wc)(char *, size_t, size_t, void *) = write_callback;
 
-void *g_trade()
+void *http_curl()
 {
-    struct IO io = {
-        "trade.json",
-        NULL};
-
+    struct IO io = {"trade.json", NULL};
     struct LIBCURL *libcurl = NULL;    // < access libcurl library
     struct curl_slist *headers = NULL; // < needed for headers
 
@@ -64,11 +61,13 @@ void *g_trade()
 
     libcurl->curl = curl_easy_init();
 
-    curl_easy_setopt(libcurl->curl, CURLOPT_URL, gu());
+    // libcurl operations
+    curl_easy_setopt(libcurl->curl, CURLOPT_URL, api());
     curl_easy_setopt(libcurl->curl, CURLOPT_CUSTOMREQUEST, "GET");
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEFUNCTION, wc);
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEDATA, &io);
 
+    // send key's via headers
     headers = curl_slist_append(headers, "accept: application/json");
     headers = curl_slist_append(headers, "APCA-API-KEY-ID: PKS5C8MOUB65EA7ACRMC");
     headers = curl_slist_append(headers, "APCA-API-SECRET-KEY: 8l0D1LbcPmgbltlmkjxhY2ltdeeRPFfk33jtzq2R");
@@ -78,6 +77,7 @@ void *g_trade()
     if (libcurl->curl == NULL)
         exit(EXIT_FAILURE);
 
+    // make the request and
     libcurl->code = curl_easy_perform(libcurl->curl);
 
     curl_easy_cleanup(libcurl->curl);
