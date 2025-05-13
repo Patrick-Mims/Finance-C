@@ -11,5 +11,6 @@ void insert(node_t **list, char *item)
     *list = node;
 }
 
+
 void display(node_t *list)
 {}
