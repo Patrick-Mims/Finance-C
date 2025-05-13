@@ -14,15 +14,17 @@ include_directories(include)
 include_directories(${PROJECT_SOURCE_DIR})
 
 add_executable(${PROJECT_NAME}
+    ${SRC}/datastructure.c
+    ${SRC}/finsftp.c
     ${SRC}/http.c
     ${SRC}/list.c
     ${SRC}/main.c
     ${SRC}/memory.c
+    ${SRC}/mysqlconn.c
     ${SRC}/thread.c
-    ${SRC}/finsftp.c
-    ${SRC}/db.c
-#    ${SRC}/parser.c
-#    ${SRC}/stack.c
+
+    # ${SRC}/parser.c
+    # ${SRC}/stack.c
 )
 
 target_link_libraries(${PROJECT_NAME}

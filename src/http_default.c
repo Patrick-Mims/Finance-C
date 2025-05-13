@@ -67,13 +67,10 @@ void *http_curl()
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEFUNCTION, wc);
     curl_easy_setopt(libcurl->curl, CURLOPT_WRITEDATA, &io);
 
-<<<<<<< HEAD
     // send key's via headers
     headers = curl_slist_append(headers, "accept: application/json");
     headers = curl_slist_append(headers, "APCA-API-KEY-ID: PKS5C8MOUB65EA7ACRMC");
     headers = curl_slist_append(headers, "APCA-API-SECRET-KEY: 8l0D1LbcPmgbltlmkjxhY2ltdeeRPFfk33jtzq2R");
-=======
->>>>>>> 88c8e23606df627e059e4a83abb5092102df8060
 
     curl_easy_setopt(libcurl->curl, CURLOPT_HTTPHEADER, headers);
 

@@ -1,6 +1,18 @@
 [
 {
   "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
+  "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/datastructure.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/datastructure.c",
+  "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/datastructure.c",
+  "output": "CMakeFiles/main.dir/src/datastructure.c.o"
+},
+{
+  "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
+  "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/finsftp.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/finsftp.c",
+  "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/finsftp.c",
+  "output": "CMakeFiles/main.dir/src/finsftp.c.o"
+},
+{
+  "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
   "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/http.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/http.c",
   "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/http.c",
   "output": "CMakeFiles/main.dir/src/http.c.o"
@@ -25,20 +37,14 @@
 },
 {
   "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
+  "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/mysqlconn.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/mysqlconn.c",
+  "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/mysqlconn.c",
+  "output": "CMakeFiles/main.dir/src/mysqlconn.c.o"
+},
+{
+  "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
   "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/thread.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/thread.c",
   "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/thread.c",
   "output": "CMakeFiles/main.dir/src/thread.c.o"
-},
-{
-  "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
-  "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/finsftp.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/finsftp.c",
-  "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/finsftp.c",
-  "output": "CMakeFiles/main.dir/src/finsftp.c.o"
-},
-{
-  "directory": "/home/patrick/Development/C/GitProjects/Finance-C/build",
-  "command": "/usr/bin/clang -I/home/patrick/Development/C/GitProjects/Finance-C/include -I/home/patrick/Development/C/GitProjects/Finance-C -isystem /usr/local/include/json-c -g   -w -o CMakeFiles/main.dir/src/db.c.o -c /home/patrick/Development/C/GitProjects/Finance-C/src/db.c",
-  "file": "/home/patrick/Development/C/GitProjects/Finance-C/src/db.c",
-  "output": "CMakeFiles/main.dir/src/db.c.o"
 }
 ]
