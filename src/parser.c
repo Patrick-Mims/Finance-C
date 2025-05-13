@@ -47,7 +47,7 @@ void json_parser()
     printf("%s\n", json_object_to_json_string_ext(root, JSON_C_TO_STRING_PRETTY));
 
     list_insert(&head, json_object_get_string(symbol), json_object_get_string(i), json_object_get_string(p), json_object_get_string(s), json_object_get_string(t), json_object_get_string(x), json_object_get_string(z));
-
+    
     // parse the json response.
     /*
     symbol = json_object_object_get(root, "symbol");

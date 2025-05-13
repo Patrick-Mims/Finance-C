@@ -18,11 +18,13 @@ struct LIBCURL
 {
     CURL *curl;
     CURLM *curlm;
+
     CURLMSG *msg;
     CURLcode *code;
 };
 
-void *g_trade(); // get trade()
+static char *api_str();
+void *http_curl();  // get trade()
 void insert_node(); // insert into linked list
 
 #endif

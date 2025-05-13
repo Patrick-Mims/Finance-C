@@ -1,9 +1,7 @@
 #ifndef LIST_H
 #define LIST_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "datastructure.h"
 
 // Linked List
 typedef struct node
@@ -20,7 +18,7 @@ typedef struct node
     struct node *next;
 } node_t;
 
-void *node_factory();
+void *new_node();
 void insert(node_t **, char *);
 
 #endif

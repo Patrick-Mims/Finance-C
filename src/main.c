@@ -1,11 +1,11 @@
-#include "db.h"
+#include "mc.h"
 #include "finance.h"
 #include "finsftp.h"
 #include "finssh.h"
 
 /*
     Ticker and beginning balance
-    Task is to track these funds daily and update the 
+    Task is to track these funds daily and update the
     Fidelity Table in the MySQL DB named Retirement.
 
     use the mysql binding
@@ -32,15 +32,15 @@ int main()
     // function pointers
     // void *(alias)() = function;
 
-    void *(*gt)() = g_trade;
-    void (*db)() = db;
+    void *(*gt)() = http_curl;
+    void (*mc)() = mysql_conn;
 
     // set the thread object name.
     pthread_t th_db, th_trade;
 
     // define threads, using a thread factory
     thread_factory(&th_trade, gt);
-    // thread_factory(&th_db, db);
+    // thread_factory(&th_db, mc);
 
     return 0;
 }
