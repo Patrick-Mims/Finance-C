@@ -3,6 +3,10 @@
 #include "finsftp.h"
 #include "finssh.h"
 
+// Function Pointers
+static void *(*hc)() = http_curl;
+static void (*mc)() = mysql_conn;
+
 /*
     Ticker and beginning balance
     Task is to track these funds daily and update the
@@ -10,6 +14,12 @@
 
     use the mysql binding
 */
+
+/**
+ * extern storage class enables several src files to share variables. 
+ */
+
+int k;
 
 const char *funds[] = {
     {"fbltx", 1241.28},
@@ -26,21 +36,28 @@ const char *funds[] = {
 
 int main()
 {
+    list_t list;
+    list_t *li = NULL;
+
+    li = &list;
+    li->size = 10;
+
+    // void (*ds)(void *) = list_destroy();
+    // list_init(list_t *list, ds);
+
     puts("Finance 2.0 on the Dev branch 2");
-    mysql_version();
+    // mysql_version();
 
-    // function pointers
-    // void *(alias)() = function;
+    /* *
+     * Set the thread object name.
+     */
+    pthread_t th01, th02;
 
-    void *(*gt)() = http_curl;
-    void (*mc)() = mysql_conn;
-
-    // set the thread object name.
-    pthread_t th_db, th_trade;
-
-    // define threads, using a thread factory
-    thread_factory(&th_trade, gt);
-    // thread_factory(&th_db, mc);
+    /* *
+     * Define threads, using a thread factory.
+     */
+    thread_factory(&th01, hc);
+    // thread_factory(&th02, mc);
 
     return 0;
 }

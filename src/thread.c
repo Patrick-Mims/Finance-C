@@ -3,7 +3,8 @@
 /**
  * Utility function to create a threads. 
  */
-void thread_factory(pthread_t *thread, const void *(*fn)(void *)) 
+
+void thread_factory(const pthread_t *thread, const void *(*fn)(void *)) 
 {
     void *result;
 
@@ -12,6 +13,4 @@ void thread_factory(pthread_t *thread, const void *(*fn)(void *))
         fprintf(stderr, "Error: pthread_create()");
 
     pthread_join(thread, &result);
-
-    pthread_exit(thread);
 }

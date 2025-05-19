@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "list.h"
 
-void *created_node(); // used by: list, queue, stack
+void *new_node(); // used by: list, queue, stack
 
 #endif

@@ -3,27 +3,23 @@
 
 #include <curl/curl.h>
 #include <pthread.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
 
-struct IO
+#include "datastructure.h"
+
+typedef struct IO
 {
     const char *json_file; // Immutable: Defined as const
     FILE *stream;
-};
+} io_t;
 
-struct LIBCURL
+typedef struct LIBCURL
 {
     CURL *curl;
-    CURLM *curlm;
+    CURLcode code;
+} libcurl_t;
 
-    CURLMSG *msg;
-    CURLcode *code;
-};
-
-static char *api_str();
+static char *alpaca_api_str();
+void *new_node(); // create a new node
 void *http_curl();  // get trade()
 void insert_node(); // insert into linked list
 
